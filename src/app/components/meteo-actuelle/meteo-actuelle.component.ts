@@ -1,14 +1,12 @@
-import { Component, Input } from '@angular/core';
-import { PrevisionMeteo } from 'src/app/models/meteo';
+import { Component, Input, OnInit } from '@angular/core';
+import { ServiceMeteoService } from 'src/app/services/service-meteo.service';
 
 @Component({
   selector: 'app-meteo-actuelle',
   templateUrl: './meteo-actuelle.component.html',
   styleUrls: ['./meteo-actuelle.component.css']
 })
-export class MeteoActuelleComponent {
-  @Input() PrevisionMeteo!: PrevisionMeteo;
+export class MeteoActuelleComponent  {
 
-  constructor() { }
+
 }
-

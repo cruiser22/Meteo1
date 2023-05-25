@@ -13,6 +13,7 @@ import { BrowserModule } from '@angular/platform-browser';
   declarations: [
     AppComponent,
     MeteoActuelleComponent,
+    
     PrevisionsComponent,
     LocalisationComponent
   ],
