@@ -1,1 +1,24 @@
-<p>previsions works!</p>
+<div *ngIf="previsions.length > 0">
+  <h2 class="text-2xl font-bold mb-4">Prévisions météo</h2>
+  <table class="w-full border-collapse">
+    <thead>
+      <tr>
+        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Date</th>
+        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Levé du soleil</th>
+        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Couché du soleil</th>
+        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">UV Index Max</th>
+        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">UV Index Clear Sky Max</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prevision of previsions" class="bg-white border-b">
+        <td class="py-4 px-6 border-b">{{ prevision.time[0] }}</td>
+        <td class="py-4 px-6 border-b">{{ prevision.sunrise[0] }}</td>
+        <td class="py-4 px-6 border-b">{{ prevision.sunset[0] }}</td>
+        <td class="py-4 px-6 border-b">{{ prevision.uv_index_max[0] }}</td>
+        <td class="py-4 px-6 border-b">{{ prevision.uv_index_clear_sky_max[0] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
