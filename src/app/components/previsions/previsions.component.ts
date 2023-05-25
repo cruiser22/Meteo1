@@ -13,7 +13,7 @@ export class PrevisionsComponent implements OnInit {
   constructor(private meteoService: ServiceMeteoService) { }
 
   ngOnInit(): void {
-    this.meteoService.getPrevisionsMeteo(50.62925,3.057256).subscribe((data: Root) => {
+    this.meteoService.getPrevisionsMeteo(9,3.057256).subscribe((data: Root) => {
       const dailyData: Daily[] = [];
       for (let i = 0; i < data.daily.time.length; i++) {
         const daily: Daily = {
