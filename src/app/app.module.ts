@@ -5,16 +5,20 @@ import { MeteoActuelleComponent } from './components/meteo-actuelle/meteo-actuel
 import { PrevisionsComponent } from './components/previsions/previsions.component';
 import { LocalisationComponent } from './components/localisation/localisation.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
+import { RechercheComponent } from './components/recherche/recherche.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MeteoActuelleComponent,
     PrevisionsComponent,
-    LocalisationComponent
+    LocalisationComponent,
+    RechercheComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
 
