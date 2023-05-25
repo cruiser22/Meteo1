@@ -5,6 +5,7 @@ import { MeteoActuelleComponent } from './components/meteo-actuelle/meteo-actuel
 import { PrevisionsComponent } from './components/previsions/previsions.component';
 import { LocalisationComponent } from './components/localisation/localisation.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
 
