@@ -18,7 +18,7 @@ export class LocalisationComponent implements OnInit{
     this.ServiceGeolocalisationService.getCurrentPosition()
     .then((position: GeolocationPosition) => {
       // Utilisez la positions pour effectuer des opérations
-      const latitude = position.coords.longitude;
+      const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
       console.log('Latitude', latitude);
       console.log('Longitude', longitude);
