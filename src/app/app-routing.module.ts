@@ -5,8 +5,11 @@ import { MeteoActuelleComponent } from './components/meteo-actuelle/meteo-actuel
 
 const routes: Routes = [
 {path: 'localisation', component: LocalisationComponent},
-{path: 'ok', component:MeteoActuelleComponent}
-
+{path: 'ok', component:MeteoActuelleComponent},
+{
+    path:'local',
+    component:LocalisationComponent
+  }
 ];
 
 @NgModule({

@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MeteoActuelleComponent } from './components/meteo-actuelle/meteo-actuelle.component';
@@ -9,6 +7,7 @@ import { LocalisationComponent } from './components/localisation/localisation.co
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -23,6 +22,7 @@ import { CommonModule } from '@angular/common';
     AppRoutingModule,
     HttpClientModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
