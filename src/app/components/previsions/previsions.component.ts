@@ -9,6 +9,7 @@ import { Root, Daily } from '../../models/meteo';
   styleUrls: ['./previsions.component.css']
 })
 export class PrevisionsComponent implements OnInit {
+// Initialisation de la propriété currentPosition avec un objet vide du type GeolocationPosition.
 
   currentPosition:GeolocationPosition = {} as GeolocationPosition;
   previsions: Daily[] = [];
@@ -31,6 +32,8 @@ export class PrevisionsComponent implements OnInit {
       }
     );
   }
+
+// integration du paramètre de géolocalisation.
 
 getPrevisionsMeteoWithLocation():void {
   const latitude = this.currentPosition.coords.latitude;
@@ -57,22 +60,4 @@ getPrevisionsMeteoWithLocation():void {
     }
     );
   }
-
-  // getLocation(): Promise <{ latitude:number, longitude: number }>{
-  //   return new Promise<{ latitude: number, longitude: number}>((resolve, reject) => {
-  // }
-
-  //   this.localisationService.getCurrentPosition()
-  //   .then((position: GeolocationPosition) => {
-  //     // Utilisez la positions pour effectuer des opérations
-  //     const latitude = position.coords.latitude;
-  //     const longitude = position.coords.longitude;
-  //     resolve({ latitude, longitude});
-  //   })
-
-  //   .catch((error:any) => {
-  //     // Gestion des erreurs liées à la géolocalisation
-  //     console.error('Erreur de géolocalisation', error);
-  //   });
-  // }};
 }
