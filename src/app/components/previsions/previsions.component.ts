@@ -35,6 +35,8 @@ export class PrevisionsComponent implements OnInit {
 getPrevisionsMeteoWithLocation():void {
   const latitude = this.currentPosition.coords.latitude;
   const longitude = this.currentPosition.coords.longitude;
+  //console.log('Latitude', latitude);
+  //console.log('Longitude', longitude);
 
     this.meteoService.getPrevisionsMeteo(latitude,longitude).subscribe((data: Root) => {
       const dailyData: Daily[] = [];
