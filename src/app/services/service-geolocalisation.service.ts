@@ -1,30 +1,30 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ServiceGeolocalisationService {
 
+  private currentPositionSubject: Subject<GeolocationPosition> = new Subject<GeolocationPosition>();
 
-  getCurrentPosition(): Promise<GeolocationPosition> {
-    return new Promise ((resolve, reject) => {
+  getCurrentPosition(): void {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position: GeolocationPosition) => {
-            resolve(position);
+            this.currentPositionSubject.next(position);
           },
       (error: GeolocationPositionError) => {
-        reject(error);
-      }
-    );
-
-  } else {
-    reject('La géolocalisation n\'est pas prise en charge par votre navigateur');
-  }
-    });
+        this.currentPositionSubject.error(error);
+      });
+    } else {
+      this.currentPositionSubject.error(new Error('La géolocalisation n\'est pas prise en charge par votre navigateur'));
+    }
   }
 
-  test() {
-    console.log("coucou")
+  getCurrentPositionObservable(): Observable<GeolocationPosition>{
+    return this.currentPositionSubject.asObservable();
   }
 }
+

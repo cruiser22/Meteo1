@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
 import { RechercheComponent } from './components/recherche/recherche.component'
+import { ServiceGeolocalisationService } from './services/service-geolocalisation.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { RechercheComponent } from './components/recherche/recherche.component'
     HttpClientModule
   ],
 
-  providers: [],
+  providers: [ServiceGeolocalisationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
