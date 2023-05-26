@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceGeolocalisationService {
 
+
   getCurrentPosition(): Promise<GeolocationPosition> {
     return new Promise ((resolve, reject) => {
       if (navigator.geolocation) {
@@ -16,9 +17,14 @@ export class ServiceGeolocalisationService {
         reject(error);
       }
     );
+
   } else {
     reject('La géolocalisation n\'est pas prise en charge par votre navigateur');
   }
     });
+  }
+
+  test() {
+    console.log("coucou")
   }
 }
