@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceGeolocalisationService } from 'src/app/services/service-geolocalisation.service';
+import { ServiceMeteoService } from 'src/app/services/service-meteo.service';
 
 @Component({
   selector: 'app-localisation',

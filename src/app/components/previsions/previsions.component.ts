@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceMeteoService } from '../../services/service-meteo.service';
+import { ServiceGeolocalisationService } from 'src/app/services/service-geolocalisation.service';
 import { Root, Daily } from '../../models/meteo';
 
 @Component({
@@ -10,10 +11,14 @@ import { Root, Daily } from '../../models/meteo';
 export class PrevisionsComponent implements OnInit {
   previsions: Daily[] = [];
 
-  constructor(private meteoService: ServiceMeteoService) { }
+  constructor(
+    private meteoService: ServiceMeteoService,
+    private localisationService:ServiceGeolocalisationService,
+    ) { }
 
   ngOnInit(): void {
-    this.meteoService.getPrevisionsMeteo(9,3.057256).subscribe((data: Root) => {
+
+    this.meteoService.getPrevisionsMeteo(1,1).subscribe((data: Root) => {
       const dailyData: Daily[] = [];
       for (let i = 0; i < data.daily.time.length; i++) {
         const daily: Daily = {
