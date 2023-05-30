@@ -4,19 +4,21 @@
     <thead>
       <tr>
         <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Date</th>
-        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Lever du soleil</th>
-        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Coucher du soleil</th>
-        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Index UV Max</th>
-        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">UV Index Clear Sky Max</th>
+        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Météo</th>
+        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Température</th>
+        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Vitesse du vent</th>
+        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Direction du vent</th>
+        <th class="py-3 px-6 bg-gray-100 text-gray-800 border-b">Humidité</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let prevision of previsions" class="bg-white border-b">
         <td class="py-4 px-6 border-b">{{ prevision.time[0] }}</td>
-        <td class="py-4 px-6 border-b">{{ prevision.sunrise[0] }}</td>
-        <td class="py-4 px-6 border-b">{{ prevision.sunset[0] }}</td>
-        <td class="py-4 px-6 border-b">{{ prevision.uv_index_max[0] }}</td>
-        <td class="py-4 px-6 border-b">{{ prevision.uv_index_clear_sky_max[0] }}</td>
+        <td class="py-4 px-6 border-b">{{ prevision.weathercode[0] }}</td>
+        <td class="py-4 px-6 border-b">{{ prevision.temperature[0] }}</td>
+        <td class="py-4 px-6 border-b">{{ prevision.windspeed[0] }}</td>
+        <td class="py-4 px-6 border-b">{{ prevision.winddirection[0] }}</td>
+        <td class="py-4 px-6 border-b">{{ prevision.temperature[0] }}</td>
       </tr>
     </tbody>
   </table>

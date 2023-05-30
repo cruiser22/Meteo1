@@ -58,4 +58,9 @@ export interface Daily {
   sunset: string[];
   uv_index_max: number[];
   uv_index_clear_sky_max: number[];
+  temperature: number[];
+  windspeed: number[];
+  winddirection: number[];
+  weathercode: number[];
 }
+

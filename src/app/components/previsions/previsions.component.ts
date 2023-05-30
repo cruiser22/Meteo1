@@ -49,8 +49,13 @@ getPrevisionsMeteoWithLocation():void {
           sunrise: [data.daily.sunrise[i]],
           sunset: [data.daily.sunset[i]],
           uv_index_max: [data.daily.uv_index_max[i]],
-          uv_index_clear_sky_max: [data.daily.uv_index_clear_sky_max[i]]
+          uv_index_clear_sky_max: [data.daily.uv_index_clear_sky_max[i]],
+          temperature: [data.current_weather.temperature],
+          windspeed: [data.current_weather.windspeed],
+          winddirection:[data.current_weather.winddirection],
+          weathercode:[data.current_weather.weathercode]
         };
+
         dailyData.push(daily);
       }
       this.previsions = dailyData;
